@@ -86,7 +86,7 @@ body{
   text-align: center;
   text-transform: uppercase;
   font-family: 'Lato', sans-serif;
-  font-size: .5em;
+  font-size: .7em;
   letter-spacing: 3px;
 }
 
@@ -123,43 +123,124 @@ body{
 <div id="timer">
 
     <div class="days"> 
-        <div id="days" class="numbers "> </div>días</div> 
+        <div id="daysDisney" class="numbers "> </div>días</div> 
       <div class="hours"> 
-        <div  id="hours" class="numbers"> </div>horas</div> 
-      <div class="minutes"> 
-        <div  id="minutes" class="numbers"> </div>minutos</div> 
-      <div   class="seconds"> 
-        <div id="seconds" class="numbers"> </div>segundos</div> 
-      </div>
+        <div  id="hoursDisney" class="numbers"> </div>horas</div> 
+
+</div>
+
+
+<div id="titulo">
+
+  <div class="titulocode"> 
+      <div id="titulocode" class="letra"> </div>Evento Urbano</div> 
+
+</div>
+
+
+
+<div id="timer">
+
+  <div class="days"> 
+      <div id="daysUrbano" class="numbers "> </div>días</div> 
+    <div class="hours"> 
+      <div  id="hoursUrbano" class="numbers"> </div>horas</div> 
+
+</div>
+
+
+
+
+<div id="titulo">
+
+  <div class="titulocode"> 
+      <div id="titulocode" class="letra"> </div>Evento Rock Clásico</div> 
+
+</div>
+
+
+
+<div id="timer">
+
+  <div class="days"> 
+      <div id="daysRock" class="numbers "> </div>días</div> 
+    <div class="hours"> 
+      <div  id="hoursRock" class="numbers"> </div>horas</div> 
+
+</div>
+
+
+<div id="titulo">
+
+  <div class="titulocode"> 
+      <div id="titulocode" class="letra"> </div>Concierto 6 años</div> 
+
+</div>
+
+
+
+<div id="timer">
+
+  <div class="days"> 
+      <div id="daysSeis" class="numbers "> </div>días</div> 
+    <div class="hours"> 
+      <div  id="hoursSeis" class="numbers"> </div>horas</div> 
 
 </div>
 
 </body>
 <script>
-    const year = new Date().getFullYear();
-const myDate = new Date('Sep 15, 2023 00:00:00');
-console.log(myDate);
+  const year = new Date().getFullYear();
+  const myDate = new Date('Sep 15, 2023 16:00:00');
+  console.log(myDate);
 
-// countdown
-let timer = setInterval(function() {
+  const Disney = new Date('Sep 15, 2023 16:00:00');
+  console.log(Disney);
+
+  const Urbano = new Date('Oct 20, 2023 16:00:00');
+  console.log(Urbano);
+
+  const Rock = new Date('Nov 10, 2023 16:00:00');
+  console.log(Rock);
+
+  const Seis = new Date('Dec 1, 2023 16:00:00');
+  console.log(Seis);
+
+  // countdown
+  let timer = setInterval(function() {
 
   // get today's date
   const today = new Date().getTime();
 
   // get the difference
   const diff = myDate - today;
+  const diffDisney = Disney - today;
+  const diffUrbano = Urbano - today;
+  const diffRock = Rock - today;
+  const diffSeis = Seis - today;
 
   // math
-  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  let daysDisney = Math.floor(diffDisney / (1000 * 60 * 60 * 24));
+  let hoursDisney = Math.floor((diffDisney % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  let daysUrbano = Math.floor(diffUrbano / (1000 * 60 * 60 * 24));
+  let hoursUrbano = Math.floor((diffUrbano % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  let daysRock = Math.floor(diffRock / (1000 * 60 * 60 * 24));
+  let hoursRock = Math.floor((diffRock % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  let daysSeis = Math.floor(diffSeis / (1000 * 60 * 60 * 24));
+  let hoursSeis = Math.floor((diffSeis % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
   // display
-  document.getElementById("days").innerHTML=days
-  document.getElementById("hours").innerHTML=hours
-  document.getElementById("minutes").innerHTML=minutes
-  document.getElementById("seconds").innerHTML=seconds
+  document.getElementById("daysDisney").innerHTML=daysDisney
+  document.getElementById("hoursDisney").innerHTML=hoursDisney
+  document.getElementById("daysUrbano").innerHTML=daysUrbano
+  document.getElementById("hoursUrbano").innerHTML=hoursUrbano
+  document.getElementById("daysRock").innerHTML=daysRock
+  document.getElementById("hoursRock").innerHTML=hoursRock
+  document.getElementById("daysSeis").innerHTML=daysSeis
+  document.getElementById("hoursSeis").innerHTML=hoursSeis
 
 
 
